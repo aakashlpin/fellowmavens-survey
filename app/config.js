@@ -22,6 +22,7 @@ require.config({
     "backbone": "../vendor/bower/backbone/backbone",
     "backbone.babysitter": '../vendor/bower/marionette/public/javascripts/backbone.babysitter',
     "backbone.wreqr": '../vendor/bower/marionette/public/javascripts/backbone.wreqr',
+    "backbone-firebase": '../vendor/bower/backfire/backbone-firebase',
     "marionette": "../vendor/bower/marionette/lib/core/amd/backbone.marionette.min",
     "tpl": "../vendor/bower/tpl/tpl"
   },
@@ -43,6 +44,11 @@ require.config({
     "backbone.wreqr": {
       deps: ["backbone"]
 
+    },
+    "backbone-firebase": {
+      deps: ["backbone"]
+
     }
+
   }
 });

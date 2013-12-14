@@ -4,8 +4,8 @@ define(function(require, exports, module) {
   // External dependencies.
   var _ = require("underscore");
   var $ = require("jquery");
-  var Backbone = require("backbone");
   var Marionette = require("marionette");
+  var Firebase = require('backbone-firebase');
 
   // Alias the module for easier identification.
   var app = module.exports;

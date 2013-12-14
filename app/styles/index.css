@@ -2,5 +2,6 @@
 
 @import "../../vendor/bower/html5-boilerplate/css/normalize.css";
 @import "../../vendor/bower/html5-boilerplate/css/main.css";
+@import "../../vendor/bower/semantic/build/packaged/css/semantic.css";
 
 /*-- Application stylesheets. -----------------------------------------------*/

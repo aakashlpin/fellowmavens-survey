@@ -13,6 +13,8 @@
     "chai": "~1.8.0",
     "sinon": "~1.7.3",
     "marionette": "~1.4.1",
-    "tpl": "https://github.com/ZeeAgency/requirejs-tpl.git"
+    "tpl": "https://github.com/ZeeAgency/requirejs-tpl.git",
+    "semantic": "https://github.com/Semantic-Org/Semantic-UI.git#~0.10.2",
+    "backfire": "https://github.com/firebase/backfire.git#~0.3.0"
   }
 }
