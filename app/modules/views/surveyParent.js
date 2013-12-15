@@ -6,8 +6,9 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
       'submit #form_stepone': 'actionOnFormSubmit'
     },
     ui: {
-      formInput: 'form input',
-      formSubmitButton: 'form input[type="submit"]'
+      form: '#form_stepone',
+      formInput: '#form_stepone input',
+      formSubmitButton: '#form_stepone input[type="submit"]'
     },
     actionOnKeyUpInFormInput: function(e) {
       var empty = false,
@@ -29,7 +30,16 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
     },
     actionOnFormSubmit: function(e) {
       e.preventDefault();
-      
+      var data = {
+        email: this.ui.form.find('#email').val(),
+        location: this.ui.form.find('#location').val(),
+        sells: this.ui.form.find('#sells').val().split(',').map(function(sell) {return $.trim(sell)}),
+        wants: this.ui.form.find('#wants').val().split(',').map(function(want) {return $.trim(want)}),
+        time: this.ui.form.find('#time').val()
+      };
+
+      console.log(data);
+
     },
     onShow: function() {
 /*      this.collection.fetch({

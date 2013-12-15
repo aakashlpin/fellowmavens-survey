@@ -9,7 +9,10 @@ define(function(require, exports, module) {
   // Defining the application router.
   module.exports = {
     indexHandler: function() {
-      console.log("Welcome to your / route.");
+      console.log("Hi there! Do you find this concept interesting? " +
+        "Moonlight with me on ideas, design and development. " +
+        "Ping me at aakash.lpin@gmail.com");
+
       var indexCollection = new IndexCollection();
       var indexView = new IndexView({collection: indexCollection});
       app.ui.main.show(indexView.render());
