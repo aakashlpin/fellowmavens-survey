@@ -1,42 +1,37 @@
 <div class="ui two column page grid">
   <div class="column">
-    <div class="ui labeled vertical fluid inverted icon menu">
-      <a class="item">
-        <i class="icon mail"></i>
-        Mail
-      </a>
-      <a class="item">
-        <i class="icon lab"></i>
-        Lab
-      </a>
-      <a class="item">
-        <i class="icon star"></i>
-        Favorites
-      </a>
-    </div>
   </div>
   <div class="column">
     <div style="">
+      <div class="ui fluid two item menu">
+        <a class="item active" id="know-share">I want to share knowledge</a>
+        <a class="item" id="know-gain">I want to gain knowledge</a>
+      </div>
+
       <div class="ui form">
-        <div class="ui info message">
-          <div class="header">We had some issues</div>
-          <ul class="list">
-            <li>Please enter your first name</li>
-            <li>Please enter your last name</li>
-          </ul>
-        </div>
         <div class="two fields">
           <div class="field">
-            <label>First Name</label>
-            <input placeholder="First Name" type="text">
+            <label for="email">Email</label>
+            <input id="email" placeholder="john.doe@gmail.com" type="email">
           </div>
           <div class="field">
-            <label>Last Name</label>
-            <input placeholder="Last Name" type="text">
+            <label for="location">Location</label>
+            <input id="location" placeholder="Bangalore" type="text">
           </div>
         </div>
-        <div class="ui blue submit button">Submit</div>
+        <div class="field">
+          <label for="time">How many avg. hours per week can you dedicate for this?</label>
+          <input type="text" id="time" placeholder="6"/>
+        </div>
+
+        <div class="field">
+          <label for="what">Knowledge on what would you like to share?</label>
+          <input type="text" id="what" placeholder="e.g. cooking"/>
+        </div>
+
+        <input type="submit" value="I'm done!" class="ui blue submit button disabled">
       </div>
+
     </div>
   </div>
 </div>
