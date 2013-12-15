@@ -2,7 +2,34 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
   return Marionette.Layout.extend({
     template: templates.surveyParent,
     events: {
-      'keypress #what': 'actionOnKeypressInWhat'
+      'keyup form input': 'actionOnKeyUpInFormInput',
+      'submit #form_stepone': 'actionOnFormSubmit'
+    },
+    ui: {
+      formInput: 'form input',
+      formSubmitButton: 'form input[type="submit"]'
+    },
+    actionOnKeyUpInFormInput: function(e) {
+      var empty = false,
+        self = this;
+
+      this.ui.formInput.each(function() {
+        if ($(this).val() == '') {
+          empty = true;
+        }
+      });
+
+      if (empty) {
+        self.ui.formSubmitButton.attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        self.ui.formSubmitButton.addClass('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+      } else {
+        self.ui.formSubmitButton.removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        self.ui.formSubmitButton.removeClass('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+      }
+    },
+    actionOnFormSubmit: function(e) {
+      e.preventDefault();
+      
     },
     onShow: function() {
 /*      this.collection.fetch({
@@ -27,11 +54,6 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
         height: 30, // height if not set in css
         type: 'select' // if this is set to 'select' then the select style toggle will be used
       });
-    },
-    actionOnKeypressInWhat: function(e) {
-      if (e.which == 13) {
-        console.log('enter')
-      }
     }
   })
 });

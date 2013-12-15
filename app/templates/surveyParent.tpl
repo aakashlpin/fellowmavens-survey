@@ -8,7 +8,7 @@
         <a class="item" id="know-gain">I want to gain knowledge</a>
       </div>
 
-      <form class="ui form">
+      <form class="ui form" id="form_stepone">
         <div class="two fields">
           <div class="field">
             <label for="email">Email</label>
@@ -35,7 +35,7 @@
           <label for="what">Knowledge on what would you like to share?</label>
           <div class="ui left labeled icon input">
             <input type="text" id="what" placeholder="cooking, pottery, dance, mentoring, startups, physics" required="required">
-            <i class="gift icon"></i>
+            <i class="smile icon"></i>
             <div class="ui corner label">
               <i class="icon asterisk"></i>
             </div>
@@ -44,12 +44,15 @@
         <div class="field">
           <label for="time">How many avg. hours per week can you dedicate for all of this in general?</label>
           <div class="ui left labeled icon input">
-            <input type="text" id="time" placeholder="6">
+            <input type="text" id="time" placeholder="14" required="required">
             <i class="time icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
           </div>
         </div>
 
-        <input type="submit" value="I'm done!" class="ui blue submit button disabled">
+        <input type="submit" value="I'm done!" class="ui blue submit button disabled" disabled="disabled">
       </form>
     </div>
   </div>
