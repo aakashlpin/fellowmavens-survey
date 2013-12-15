@@ -24,6 +24,7 @@ require.config({
     "backbone.wreqr": '../vendor/bower/marionette/public/javascripts/backbone.wreqr',
     "backbone-firebase": '../vendor/bower/backfire/backbone-firebase',
     "marionette": "../vendor/bower/marionette/lib/core/amd/backbone.marionette.min",
+    "jquery-toggles": "../vendor/bower/jquery-toggles/toggles.min",
     "tpl": "../vendor/bower/tpl/tpl"
   },
 
@@ -48,6 +49,10 @@ require.config({
     "backbone-firebase": {
       deps: ["backbone"]
 
+    },
+    "jquery-toggles": {
+      deps: ["jquery"],
+      exports: 'jquery-toggles'
     }
 
   }
