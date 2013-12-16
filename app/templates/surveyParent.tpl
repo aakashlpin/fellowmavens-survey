@@ -31,7 +31,7 @@
   <div class="column">
     <div>
 
-      <form class="ui segment form inverted" id="form_stepone">
+      <form class="ui segment form inverted" id="form_stepone" style="background: rgba(0,0,0,0.5)">
         <div class="two fields">
           <div class="field">
             <label for="email">Email</label>
