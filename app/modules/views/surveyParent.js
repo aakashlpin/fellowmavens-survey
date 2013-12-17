@@ -15,7 +15,7 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
         self = this;
 
       this.ui.formInput.each(function() {
-        if ($(this).val() == '') {
+        if ($(this).val() === '') {
           empty = true;
         }
       });
@@ -33,8 +33,8 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
       var data = {
         email: this.ui.form.find('#email').val(),
         location: this.ui.form.find('#location').val(),
-        sells: this.ui.form.find('#sells').val().split(',').map(function(sell) {return $.trim(sell)}),
-        wants: this.ui.form.find('#wants').val().split(',').map(function(want) {return $.trim(want)}),
+        sells: this.ui.form.find('#sells').val().split(',').map(function(sell) {return $.trim(sell);}),
+        wants: this.ui.form.find('#wants').val().split(',').map(function(want) {return $.trim(want);}),
         time: this.ui.form.find('#time').val()
       };
 
