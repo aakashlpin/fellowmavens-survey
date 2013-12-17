@@ -65,5 +65,5 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
         type: 'select' // if this is set to 'select' then the select style toggle will be used
       });
     }
-  })
+  });
 });
