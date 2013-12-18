@@ -5,7 +5,7 @@ define(function(require, exports, module) {
   var _ = require("underscore");
   var $ = require("jquery");
   var Marionette = require("marionette");
-  var Firebase = require('backbone-firebase');
+  require('backbone-firebase');
 
   // Alias the module for easier identification.
   var app = module.exports;

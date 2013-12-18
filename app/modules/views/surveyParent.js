@@ -1,5 +1,13 @@
-define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templates) {
-  return Marionette.Layout.extend({
+define(function(require, exports, module) {
+
+  var Marionette = require('marionette'),
+    templates = require('templates'),
+    Firebase = require('firebase'),
+    FirebaseSimpleLogin = require('firebase-simple-login');
+
+  require('jquery-toggles');
+
+  module.exports = Marionette.Layout.extend({
     template: templates.surveyParent,
     events: {
       'keyup form input': 'actionOnKeyUpInFormInput',
@@ -41,29 +49,60 @@ define(['marionette', 'templates', 'jquery-toggles'], function(Marionette, templ
       console.log(data);
 
     },
-    onShow: function() {
-/*      this.collection.fetch({
-        success: function(data) {
-          console.log(data);
-        }
-      });*/
+    getBackground: function() {
+      var img = new Image();
+      img.src = '/app/img/bg.jpg';
+      img.onload = function() {
+        $('.bgHolder')
+          .prop({
+            src: '/app/img/bg.jpg'
+          })
+          .addClass('bg')
+          .fadeIn();
+      };
 
-      $('.toggle').toggles({
-        drag: true, // can the toggle be dragged
-        click: true, // can it be clicked to toggle
-        text: {
-          on: 'Free', // text for the ON position
-          off: 'Money' // and off
-        },
-        on: true, // is the toggle ON on init
-        animate: 250, // animation time
-        transition: 'ease-in-out', // animation transition,
-        checkbox: $('#s_cooking'), // the checkbox to toggle (for use in forms)
-        clicker: null, // element that can be clicked on to toggle. removes binding from the toggle itself (use nesting)
-        width: 70, // width used if not set in css
-        height: 30, // height if not set in css
-        type: 'select' // if this is set to 'select' then the select style toggle will be used
+    },
+    onShow: function() {
+      /*      this.collection.fetch({
+       success: function(data) {
+       console.log(data);
+       }
+       });*/
+      this.getBackground();
+      var firebaseRef = new Firebase('https://fellowmavens.firebaseio.com');
+      var auth = new FirebaseSimpleLogin(firebaseRef, function(error, user) {
+        if (error) {
+          // an error occurred while attempting login
+          alert(error);
+        } else if (user) {
+          // user authenticated with Firebase
+          console.log(user);
+
+          // Log out so we can log in again with a different provider.
+          auth.logout();
+        } else {
+          // user is logged out
+        }
       });
+
+//      auth.login('facebook');
+
+      /*      $('.toggle').toggles({
+       drag: true, // can the toggle be dragged
+       click: true, // can it be clicked to toggle
+       text: {
+       on: 'Free', // text for the ON position
+       off: 'Money' // and off
+       },
+       on: true, // is the toggle ON on init
+       animate: 250, // animation time
+       transition: 'ease-in-out', // animation transition,
+       checkbox: $('#s_cooking'), // the checkbox to toggle (for use in forms)
+       clicker: null, // element that can be clicked on to toggle. removes binding from the toggle itself (use nesting)
+       width: 70, // width used if not set in css
+       height: 30, // height if not set in css
+       type: 'select' // if this is set to 'select' then the select style toggle will be used
+       });*/
     }
   });
 });

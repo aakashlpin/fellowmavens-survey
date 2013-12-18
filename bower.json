@@ -16,6 +16,8 @@
     "tpl": "https://github.com/ZeeAgency/requirejs-tpl.git",
     "semantic": "https://github.com/Semantic-Org/Semantic-UI.git#~0.10.2",
     "backfire": "https://github.com/firebase/backfire.git#~0.3.0",
-    "jquery-toggles": "https://github.com/simontabor/jquery-toggles.git#~2.0.4"
+    "jquery-toggles": "https://github.com/simontabor/jquery-toggles.git#~2.0.4",
+    "firebase": "~1.0.1",
+    "firebase-simple-login": "*"
   }
 }

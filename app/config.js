@@ -8,6 +8,11 @@ require.config({
     "models": "./modules/models",
     "collections": "./modules/collections",
 
+    //firebase
+    "firebase": "../vendor/bower/firebase/lib/firebase",
+    "firebase-simple-login": "../vendor/bower/firebase/lib/firebase-simple-login",
+    "backbone-firebase": '../vendor/bower/backfire/backbone-firebase',
+
     // Almond is used to lighten the output filesize.
     "almond": "../vendor/bower/almond/almond",
 
@@ -22,7 +27,6 @@ require.config({
     "backbone": "../vendor/bower/backbone/backbone",
     "backbone.babysitter": '../vendor/bower/marionette/public/javascripts/backbone.babysitter',
     "backbone.wreqr": '../vendor/bower/marionette/public/javascripts/backbone.wreqr',
-    "backbone-firebase": '../vendor/bower/backfire/backbone-firebase',
     "marionette": "../vendor/bower/marionette/lib/core/amd/backbone.marionette.min",
     "jquery-toggles": "../vendor/bower/jquery-toggles/toggles.min",
     "tpl": "../vendor/bower/tpl/tpl"
@@ -42,17 +46,26 @@ require.config({
       deps: ["backbone"]
 
     },
+    "firebase": {
+      exports: "Firebase"
+
+    },
+    "firebase-simple-login": {
+      exports: "FirebaseSimpleLogin"
+
+    },
     "backbone.wreqr": {
       deps: ["backbone"]
 
     },
     "backbone-firebase": {
-      deps: ["backbone"]
+      deps: ["backbone", "firebase"]
 
     },
     "jquery-toggles": {
       deps: ["jquery"],
       exports: 'jquery-toggles'
+
     }
 
   }
